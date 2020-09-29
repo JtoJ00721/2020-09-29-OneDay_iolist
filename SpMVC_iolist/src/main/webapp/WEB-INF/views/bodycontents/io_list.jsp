@@ -67,26 +67,12 @@ article a {
 article a:hover {
 	background-color: #ddd;
 	color: black;
-	font-weight:bolder;
+	font-weight: bolder;
 	box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.75);
 	-webkit-box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.75);
 }
 </style>
-<script>
-	$(function() {
-
-		$(".pro_item").click(function() {
-
-			const p_code = $(this).children().eq(0).text()
-
-			const p_code1 = $(this).data("pcode")
-
-			document.location.href = "${rootPath}/detail?id=" + p_code
-
-		})
-	})
-</script>
 <table>
 	<thead>
 		<tr>
@@ -102,11 +88,8 @@ article a:hover {
 		</tr>
 	</thead>
 	<tbody>
-		<c:forEach items="${PRO_LIST}" var="VO">
-			<%@ include file="/WEB-INF/views/component/product/io_item.jspf"%>
-		</c:forEach>
 	</tbody>
 </table>
 <article>
-	<a href="${rootPath}/insert">상품추가</a>
+	<a href="${rootPath}/write/">상품추가</a>
 </article>
