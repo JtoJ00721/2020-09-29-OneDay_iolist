@@ -23,6 +23,8 @@ public class IoVO {
 	private int io_price;	//	number
 	private int io_quan;	//	number
 	private int io_total;	//	number
+	private int io_totalprice;	//	number
+	private int io_totalquan;	//	number
 		
 	private Byte p_not_use;
 	

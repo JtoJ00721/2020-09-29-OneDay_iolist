@@ -13,6 +13,5 @@
 
 	<typeAliases>
 		<typeAlias type="com.biz.shop.model.IoVO" alias="IoVO" />
-		<typeAlias type="com.biz.shop.model.DeptVO" alias="DeptVO" />
 	</typeAliases>
 </configuration>

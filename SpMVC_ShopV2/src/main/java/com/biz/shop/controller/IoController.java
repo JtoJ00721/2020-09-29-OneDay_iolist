@@ -24,16 +24,15 @@ public class IoController {
 
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
-	public String insert(@ModelAttribute("PRO_VO") IoVO proVO, Model model) {
-		model.addAttribute("BODY", "PRO_WRITE");
+	public String insert(@ModelAttribute("IO_VO") IoVO ioVO, Model model) {
+		model.addAttribute("BODY", "IO_WRITE");
 		return "home";
 	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
-	public String insert(@ModelAttribute IoVO proVO) {
+	public String insert(@ModelAttribute IoVO ioVO) {
 
-		log.debug("상품정보 입력 : {}", proVO.toString());
-		int ret = proService.insert(proVO);
+		int ret = proService.insert(ioVO);
 		return "redirect:/";
 
 	}
@@ -41,10 +40,10 @@ public class IoController {
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public String detail(@RequestParam("id") String p_code, Model model) {
 
-		IoVO proVO = proService.findByID(p_code);
+		IoVO ioVO = proService.findByID(p_code);
 
-		model.addAttribute("PRO_VO", proVO);
-		model.addAttribute("BODY", "PRO_DETAIL");
+		model.addAttribute("IO_VO", ioVO);
+		model.addAttribute("BODY", "IO_DETAIL");
 		return "home";
 
 	}
@@ -57,20 +56,20 @@ public class IoController {
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.GET)
-	public String update(@RequestParam("id") String p_code, @ModelAttribute("PRO_VO") IoVO proVO, Model model) {
+	public String update(@RequestParam("id") String p_code, @ModelAttribute("IO_VO") IoVO ioVO, Model model) {
 
-		proVO = proService.findByID(p_code);
-		model.addAttribute("PRO_VO", proVO);
-		model.addAttribute("BODY", "PRO_WRITE");
+		ioVO = proService.findByID(p_code);
+		model.addAttribute("IO_VO", ioVO);
+		model.addAttribute("BODY", "IO_WRITE");
 		return "home";
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public String update(@ModelAttribute IoVO proVO, Model model) {
+	public String update(@ModelAttribute IoVO ioVO, Model model) {
 
-		int ret = proService.update(proVO);
+		int ret = proService.update(ioVO);
 
-		model.addAttribute("id", proVO.getP_code());
+		model.addAttribute("id", ioVO.getP_code());
 		return "redirect:/detail";
 
 	}

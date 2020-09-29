@@ -84,7 +84,6 @@ public class ProductServiceImplV1 implements ProductService{
 		 * 그중에 P0010코드를 가져오는 SQL를 만들겠다.
 		 */
 		String strMaxPCode = proDao.maxPCode();
-		log.debug("조회한 상품코드 : {}",strMaxPCode);
 		
 		
 		/*
@@ -99,14 +98,11 @@ public class ProductServiceImplV1 implements ProductService{
 		
 			String preCode = strMaxPCode.substring(0,1);
 			String pCode = strMaxPCode.substring(1);
-			log.debug("분리된 상품코드 {}, {}" , preCode, pCode);
 			
 			retPCode = String.format("%s%05d", preCode, Integer.valueOf(pCode) + 1);
 		
 		} catch (Exception e) {
-			// TODO: handle exception
 		}
-		log.debug("새로 생성된 상품코드 {} ", retPCode);
 		
 		return retPCode;
 	}

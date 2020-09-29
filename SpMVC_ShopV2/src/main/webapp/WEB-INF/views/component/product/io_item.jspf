@@ -10,5 +10,6 @@
 	<td>${VO.p_oprice}</td>
 	<td>${VO.io_price}</td>
 	<td>${VO.io_quan}</td>
-	<td>${VO.io_total}</td>
+	<td>${VO.io_totalprice}</td>
+	<td>${VO.io_totalquan}</td>
 </tr>
