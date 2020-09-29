@@ -50,6 +50,10 @@ header h2 {
 #main_contents {
 	display: block;
 	height: 100%;
+	text-align: center;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
 }
 
 footer {
