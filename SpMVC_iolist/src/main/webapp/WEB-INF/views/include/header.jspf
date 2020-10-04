@@ -1,0 +1,54 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<c:set var="rootPath" value="${pageContext.request.contextPath}" />
+
+<style>
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+header {
+	background-color: cornflowerblue;
+	background-size: 100%;
+	color: white;
+	text-align: center;
+	padding: 2rem;
+	position: fixd;
+}
+
+#header_easter {
+	display: inline-block;
+	position: absolute;
+	padding: 10px;
+	background-color: cornflowerblue;
+	color: cornflowerblue;
+	text-decoration: none;
+}
+
+#header_easter a {
+	color: inherit;
+}
+
+header h2 {
+	margin: 16px;
+	text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+</style>
+
+
+<div id="header_easter">
+	<a href="https://www.youtube.com/watch?v=TngViNw2pOo">날 찾아낼 줄이야...</a>
+</div>
+<header>
+	<h2>농농이네 가게</h2>
+	<p>쩔쩔이가 만든 매입매출 관리 2020 V1</p>
+</header>

@@ -1,5 +1,7 @@
 package com.biz.iolist.service;
 
-public interface IoService {
+import com.biz.iolist.model.IoVO;
+
+public interface IoService extends GenericService<IoVO, Long>{
 
 }

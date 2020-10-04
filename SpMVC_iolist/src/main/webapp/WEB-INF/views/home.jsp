@@ -55,57 +55,28 @@ header h2 {
 	align-content: center;
 	justify-content: center;
 }
-
-footer {
-	height: 18%;
-	text-align: center;
-	background-color: black;
-}
-
-#footer-info {
-	font-size: 30px;
-	color: whitesmoke;
-}
-
-#footer-easter {
-	margin-top: 30px;
-	font-size: 15px;
-	color: black;
-}
 </style>
 
 </head>
 <body>
 
-	<div id="header_easter">
-		<a href="https://www.youtube.com/watch?v=TngViNw2pOo">날 찾아낼 줄이야...</a>
-	</div>
-	<header>
-		<h2>농농이네 가게</h2>
-		<p>쩔쩔이가 만든 매입매출 관리 2020 V1</p>
-	</header>
+	<%@ include file="/WEB-INF/views/include/header.jspf"%>
+
 	<section id="main_contents">
 		<c:choose>
 			<c:when test="${BODY == 'IO_WRITE' }">
 				<%@ include file="/WEB-INF/views/bodycontents/io_write.jsp"%>
 			</c:when>
 			<c:when test="${BODY == 'IO_DETAIL'}">
-				<%@ include file="/WEB-INF/views/bodycontents/io_write.jsp"%>
+				<%@ include file="/WEB-INF/views/bodycontents/io_detail.jsp"%>
 			</c:when>
-			<c:otherwise>
+			<c:when test="${BODY == 'IO_LIST'}">
 				<%@ include file="/WEB-INF/views/bodycontents/io_list.jsp"%>
-			</c:otherwise>
+			</c:when>
 		</c:choose>
 	</section>
 
-	<footer>
-		<p id="footer-info">
-			쩔쩔이가 만든 사이트<br />네이버 검색창에 JtoJ라고 쳐보세요!<br />
-		</p>
-		<p id="footer-easter">
-			에엫따..! 이보시오... 이보시오! 쩔쩔이 양반!!!<br />아무것도 안나오니 어찌하면 좋겠소.....
-		</p>
-	</footer>
+	<%@ include file="/WEB-INF/views/include/footer.jspf"%>
 
 </body>
 </html>

@@ -2,94 +2,189 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="rootPath" value="${pageContext.request.contextPath}" />
+
 <style>
-table {
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+#list_table_div {
+	
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: auto;
+	margin: 30px;
+	padding: 10px;
+}
+
+#product-list {
 	border-collapse: collapse;
-	border: 3px dashed yellowgreen;
-	width: 80%;
-	margin: 10px auto;
-	margin-top: 70px;
+	text-align: center;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	width: 70%;
+	border: 2px dashed olive;
 }
 
-th, td {
-	border: 1px solid #ccc;
+#product-list th, #product-list td {
+	border: 1px solid #aaaa;
 	padding: 8px;
-	text-align: left;
+	text-align: center;
+	vertical-align: top;
 }
 
-th {
-	border-bottom: 2px dotted green;
-	margin: 10px;
+#product-list th {
+	background-color: honeydew;
+	color: black;
 }
 
-/* child 속성에 연산식을 사용하는 방법  */
-/* An + b 형식의 연산식을 사용한다 */
-/* n : 1 ~ child 개수만큼 +1씩 증가하는 값 */
-/* th와 td 값에 4번째 위치부터 이후에 동일한 특성(style)을 지정*/
-th:nth-child(n+4), td:nth-child(n+4) {
-	text-align: right;
+#product-list tr {
+	transition: all 0.5s;
 }
 
-tbody tr {
-	transition: all 0.3s;
-}
-
-tbody tr:nth-child(odd) {
-	background-color: rgb(100, 149, 237, 0.2);
-}
-
-tbody tr:nth-child(even) {
-	background-color: #fff;
-}
-
-tbody tr:hover {
-	background-color: #ddd;
+#product-list tr:nth-child(n+2):nth-last-child(n+2) {
 	cursor: pointer;
 }
 
-article {
-	width: 80%;
-	margin: 5px auto;
+#product-list tr:nth-child(even) {
+	background-color: aliceblue;
+}
+
+#product-list tr:nth-child(odd) {
+	background-color: white;
+}
+
+#product-list tr:nth-last-child(1) {
+	background-color: coral;
+	color: wheat;
+	font-weight: bold;
+}
+
+#product-list tr:nth-child(n+2):nth-last-child(n+2):hover {
+	background-color: #ddd;
+}
+
+#new-write {
+	width: 90%;
+	margin: 0 auto;
+	padding: 10px;
 	text-align: right;
 }
 
-article a {
-	display: inline-block;
-	padding: 8px 16px;
-	background-color: coral;
-	color: white;
+#new-write a {
+	border: none;
+	border-radius: 5px;
+	outline: none;
+	background-color: yellowgreen;
+	color: brown;
+	font-size: 15px;
+	padding: 10px;
 	cursor: pointer;
 	text-decoration: none;
-	border-radius: 5px;
-	transition: all 0.7s;
+	transition: all 0.5s;
 }
 
-article a:hover {
-	background-color: #ddd;
-	color: black;
-	font-weight: bolder;
-	box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.75);
-	-webkit-box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.75);
-	-moz-box-shadow: 10px 10px 23px 0px rgba(0, 0, 0, 0.75);
+#new-write a:hover {
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+	background-color: cornflowerblue;
+	font-weight: bold;
 }
 </style>
-<table>
-	<thead>
+
+<div id="list_table_div">
+
+	<table id="product-list">
 		<tr>
 			<th>No</th>
 			<th>일자</th>
 			<th>시각</th>
 			<th>상품명</th>
-			<th>구분</th>
-			<th>단가</th>
+			<th>매입단가</th>
+			<th>판매단가</th>
 			<th>수량</th>
 			<th>매입합계</th>
 			<th>판매합계</th>
 		</tr>
-	</thead>
-	<tbody>
-	</tbody>
-</table>
-<article>
-	<a href="${rootPath}/write/">상품추가</a>
-</article>
+		<c:forEach items="${ITEMS}" var="items" varStatus="i">
+			<c:choose>
+				<c:when test="${items.io_input=='1'}">
+					<tr class=io_item data-id="${items.seq}">
+						<td>${i.count}</td>
+						<td>${items.io_date}</td>
+						<td>${items.io_time}</td>
+						<td>${items.io_pname}</td>
+						<td>${items.io_price}</td>
+						<td></td>
+						<td>${items.io_quan}</td>
+						<td class="i_price">${items.io_total}</td>
+						<td></td>
+					</tr>
+				</c:when>
+				<c:otherwise>
+					<tr class=io_item data-id="${items.seq}">
+						<td>${i.count}</td>
+						<td>${items.io_date}</td>
+						<td>${items.io_time}</td>
+						<td>${items.io_pname}</td>
+						<td></td>
+						<td>${items.io_price}</td>
+						<td>${items.io_quan}</td>
+						<td></td>
+						<td class="o_price">${items.io_total}</td>
+					</tr>
+				</c:otherwise>
+			</c:choose>
+		</c:forEach>
+
+		<tr>
+			<td colspan="7">합계</td>
+			<td id="i_total"></td>
+			<td id="o_total"></td>
+		</tr>
+	</table>
+
+</div>
+
+
+<div id="new-write">
+	<a href="${rootPath}/write">새로 작성</a>
+</div>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		let i_list = document.querySelectorAll(".i_price");
+		let o_list = document.querySelectorAll(".o_price");
+		let i_total = 0;
+		let o_total = 0;
+
+		i_list.forEach(function(obj) {
+			i_total += Number(obj.innerHTML);
+		});
+
+		o_list.forEach(function(obj) {
+			o_total += Number(obj.innerHTML);
+		});
+
+		document.querySelector("#i_total").innerHTML = i_total;
+		document.querySelector("#o_total").innerHTML = o_total;
+
+		let io_list = document.querySelectorAll(".io_item");
+		io_list.forEach(function(obj) {
+			obj.addEventListener("click", function() {
+				let id = obj.getAttribute("data-id");
+				document.location.href = `${rootPath}/detail/?id=${id}`;
+			});
+		});
+	});
+</script>

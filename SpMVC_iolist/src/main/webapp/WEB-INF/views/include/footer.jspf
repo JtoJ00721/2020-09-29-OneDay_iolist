@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<c:set var="rootPath" value="${pageContext.request.contextPath}" />
+
+<style>
+footer {
+	height: 18%;
+	text-align: center;
+	background-color: black;
+}
+
+#footer-info {
+	font-size: 30px;
+	color: whitesmoke;
+}
+
+#footer-easter {
+	margin-top: 30px;
+	font-size: 15px;
+	color: black;
+}
+</style>
+
+<footer>
+	<p id="footer-info">
+		쩔쩔이가 만든 사이트<br />네이버 검색창에 JtoJ라고 쳐보세요!<br />
+	</p>
+	<p id="footer-easter">
+		에엫따..! 이보시오... 이보시오! 쩔쩔이 양반!!!<br />아무것도 안나오니 어찌하면 좋겠소.....
+	</p>
+</footer>
