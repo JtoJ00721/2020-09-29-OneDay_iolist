@@ -4,7 +4,6 @@
 <c:set var="rootPath" value="${pageContext.request.contextPath}" />
 
 <style>
-
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -17,7 +16,6 @@ html, body {
 }
 
 #list_table_div {
-	
 	text-align: center;
 	align-items: center;
 	justify-content: center;
@@ -34,7 +32,7 @@ html, body {
 	align-items: center;
 	justify-content: center;
 	width: 70%;
-	border: 2px dashed olive;
+	border: 3px dashed olive;
 }
 
 #product-list th, #product-list td {
@@ -53,6 +51,10 @@ html, body {
 	transition: all 0.5s;
 }
 
+#product-list tr:first-child {
+	border-bottom: 2px dotted olive;
+}
+
 #product-list tr:nth-child(n+2):nth-last-child(n+2) {
 	cursor: pointer;
 }
@@ -66,6 +68,7 @@ html, body {
 }
 
 #product-list tr:nth-last-child(1) {
+	border-top: 2px dotted olive;
 	background-color: coral;
 	color: wheat;
 	font-weight: bold;

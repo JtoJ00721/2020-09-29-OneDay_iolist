@@ -112,7 +112,6 @@ html, body {
 	background-color: coral;
 	font-weight: bold;
 }
-
 </style>
 
 <form:form id="iteminput" modelAttribute="IOVO">
@@ -158,7 +157,7 @@ html, body {
 		</div>
 
 		<div class="btn-box">
-			<button id="btn-list">리스트로</button>
+			<a href="${rootPath}/"><button id="btn-list" type="button">리스트로</button></a>
 			<button id="btn-save">저장</button>
 		</div>
 	</fieldset>
