@@ -36,6 +36,7 @@ header {
 
 #header_easter a {
 	color: inherit;
+	text-decoration: none;
 }
 
 header h2 {

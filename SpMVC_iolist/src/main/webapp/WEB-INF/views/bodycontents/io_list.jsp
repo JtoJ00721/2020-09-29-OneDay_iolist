@@ -15,11 +15,16 @@ html, body {
 	width: 100%;
 }
 
+#holder {
+	text-align: center;
+}
+
 #list_table_div {
+	display:inline-block;
 	text-align: center;
 	align-items: center;
 	justify-content: center;
-	width: 100%;
+	width: 70%; 
 	height: auto;
 	margin: 30px;
 	padding: 10px;
@@ -28,10 +33,7 @@ html, body {
 #product-list {
 	border-collapse: collapse;
 	text-align: center;
-	align-content: center;
-	align-items: center;
-	justify-content: center;
-	width: 70%;
+	width: 100%;
 	border: 3px dashed olive;
 }
 
@@ -105,6 +107,7 @@ html, body {
 }
 </style>
 
+<section id="holder">
 <div id="list_table_div">
 
 	<table id="product-list">
@@ -123,7 +126,7 @@ html, body {
 			<c:choose>
 				<c:when test="${items.io_input=='1'}">
 					<tr class=io_item data-id="${items.seq}">
-						<td>${i.count}</td>
+						<td>${items.seq}</td>
 						<td>${items.io_date}</td>
 						<td>${items.io_time}</td>
 						<td>${items.io_pname}</td>
@@ -136,7 +139,7 @@ html, body {
 				</c:when>
 				<c:otherwise>
 					<tr class=io_item data-id="${items.seq}">
-						<td>${i.count}</td>
+						<td>${items.seq}</td>
 						<td>${items.io_date}</td>
 						<td>${items.io_time}</td>
 						<td>${items.io_pname}</td>
@@ -158,7 +161,7 @@ html, body {
 	</table>
 
 </div>
-
+</section>
 
 <div id="new-write">
 	<a href="${rootPath}/write">새로 작성</a>
@@ -183,10 +186,11 @@ html, body {
 		document.querySelector("#o_total").innerHTML = o_total;
 
 		let io_list = document.querySelectorAll(".io_item");
+
 		io_list.forEach(function(obj) {
 			obj.addEventListener("click", function() {
 				let id = obj.getAttribute("data-id");
-				document.location.href = `${rootPath}/detail/?id=${id}`;
+				document.location.href = `${rootPath}/detail/?id=` + id;
 			});
 		});
 	});
