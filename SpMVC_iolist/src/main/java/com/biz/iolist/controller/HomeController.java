@@ -20,13 +20,9 @@ import com.biz.iolist.service.IoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @Controller
 @RequiredArgsConstructor
 public class HomeController {
-
-	@Autowired
-	private IoDao ioDao;
 
 	@Qualifier("pService")
 	private final IoService ioService;

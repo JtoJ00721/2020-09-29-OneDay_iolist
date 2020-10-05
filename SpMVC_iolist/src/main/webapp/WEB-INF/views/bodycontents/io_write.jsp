@@ -166,9 +166,8 @@ html, body {
 <script>
 	document.addEventListener("DOMContentLoaded", function() {
 		document.querySelector("#btn-save").addEventListener("click",
-				function() {
-					if()
+				function({
 					document.location.href("/iolist/write");
-				});
+				}); 					
 	});
 </script>
