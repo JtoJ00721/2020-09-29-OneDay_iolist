@@ -20,38 +20,15 @@ html, body {
 	width: 100%;
 }
 
-header {
-	background-color: cornflowerblue;
-	background-size: 100%;
-	color: white;
-	text-align: center;
-	padding: 2rem;
-	position: fixd;
-}
-
-#header_easter {
-	display: inline-block;
-	position: absolute;
-	padding: 10px;
-	background-color: cornflowerblue;
-	color: cornflowerblue;
-	text-decoration: none;
-}
-
-#header_easter a {
-	color: inherit;
-}
-
-header h2 {
-	margin: 16px;
-	text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-}
 
 #main_contents {
 	display: block;
 	height: 100%;
+<<<<<<< HEAD
 	text-align: center;
 	align-items: center;
+=======
+>>>>>>> 5be0764b9239b9bf86d48a22020b88bc0ae22d58
 }
 </style>
 

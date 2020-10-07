@@ -36,12 +36,16 @@ header {
 
 #header_easter a {
 	color: inherit;
+<<<<<<< HEAD
 	transition: all 30s;
 }
 
 #header_easter a:hover {
 	font-weight: bold;
 	color: black
+=======
+	text-decoration: none;
+>>>>>>> 5be0764b9239b9bf86d48a22020b88bc0ae22d58
 }
 
 header h2 {

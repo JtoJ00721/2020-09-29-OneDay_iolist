@@ -21,13 +21,18 @@ footer {
 	font-size: 15px;
 	color: black;
 }
+
+a {
+	text-decoration: none;
+}
 </style>
 
 <footer>
 	<p id="footer-info">
 		쩔쩔이가 만든 사이트<br />네이버 검색창에 JtoJ라고 쳐보세요!<br />
 	</p>
-	<p id="footer-easter">
-		에엫따..! 이보시오... 이보시오! 쩔쩔이 양반!!!<br />아무것도 안나오니 어찌하면 좋겠소.....
-	</p>
+	<a href="https://www.youtube.com/watch?v=NxKCN5-8-Ns"><p
+			id="footer-easter">
+			에엫따..! 이보시오... 이보시오! 쩔쩔이 양반!!!<br />아무것도 안나오니 어찌하면 좋겠소.....
+		</p></a>
 </footer>
