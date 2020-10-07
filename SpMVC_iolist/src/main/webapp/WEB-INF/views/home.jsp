@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<title>농농이네 가게</title>
+<title>농농이네 가계부</title>
 <style>
 * {
 	box-sizing: border-box;
@@ -52,8 +52,6 @@ header h2 {
 	height: 100%;
 	text-align: center;
 	align-items: center;
-	align-content: center;
-	justify-content: center;
 }
 </style>
 

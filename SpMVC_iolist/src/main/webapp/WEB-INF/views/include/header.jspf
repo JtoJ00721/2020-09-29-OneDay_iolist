@@ -36,6 +36,12 @@ header {
 
 #header_easter a {
 	color: inherit;
+	transition: all 30s;
+}
+
+#header_easter a:hover {
+	font-weight: bold;
+	color: black
 }
 
 header h2 {
@@ -49,6 +55,6 @@ header h2 {
 	<a href="https://www.youtube.com/watch?v=TngViNw2pOo">날 찾아낼 줄이야...</a>
 </div>
 <header>
-	<h2>농농이네 가게</h2>
-	<p>쩔쩔이가 만든 매입매출 관리 2020 V1</p>
+	<h2>농농이네 가계부</h2>
+	<p>쩔쩔이가 만든 매입매출 관리 프로그램 2020 V1</p>
 </header>

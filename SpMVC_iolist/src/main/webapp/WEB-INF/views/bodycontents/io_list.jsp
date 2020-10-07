@@ -4,7 +4,6 @@
 <c:set var="rootPath" value="${pageContext.request.contextPath}" />
 
 <style>
-
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -17,72 +16,66 @@ html, body {
 }
 
 #list_table_div {
-	
 	text-align: center;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: auto;
-	margin: 30px;
-	padding: 10px;
-}
-
-#product-list {
-	border-collapse: collapse;
-	text-align: center;
-	align-content: center;
 	align-items: center;
 	justify-content: center;
 	width: 70%;
+	margin: 30px;
+	padding: 20px;
+}
+
+#io_list {
+	border-collapse: collapse;
+	text-align: center;
+	width: 100%;
 	border: 2px dashed olive;
 }
 
-#product-list th, #product-list td {
+#io_list th, #io_list td {
 	border: 1px solid #aaaa;
 	padding: 8px;
 	text-align: center;
 	vertical-align: top;
 }
 
-#product-list th {
+#io_list th {
 	background-color: honeydew;
 	color: black;
 }
 
-#product-list tr {
+#io_list tr {
 	transition: all 0.5s;
 }
 
-#product-list tr:nth-child(n+2):nth-last-child(n+2) {
+#io_list tr:nth-child(n+2):nth-last-child(n+2) {
 	cursor: pointer;
 }
 
-#product-list tr:nth-child(even) {
+#io_list tr:nth-child(even) {
 	background-color: aliceblue;
 }
 
-#product-list tr:nth-child(odd) {
+#io_list tr:nth-child(odd) {
 	background-color: white;
 }
 
-#product-list tr:nth-last-child(1) {
+#io_list tr:nth-last-child(1) {
 	background-color: coral;
 	color: wheat;
 	font-weight: bold;
 }
 
-#product-list tr:nth-child(n+2):nth-last-child(n+2):hover {
+#io_list tr:nth-child(n+2):nth-last-child(n+2):hover {
 	background-color: #ddd;
 }
 
-#new-write {
+#new_write {
 	width: 90%;
-	margin: 0 auto;
 	padding: 10px;
 	text-align: right;
 }
 
-#new-write a {
+#new_write a {
 	border: none;
 	border-radius: 5px;
 	outline: none;
@@ -95,7 +88,7 @@ html, body {
 	transition: all 0.5s;
 }
 
-#new-write a:hover {
+#new_write a:hover {
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 	background-color: cornflowerblue;
 	font-weight: bold;
@@ -104,7 +97,7 @@ html, body {
 
 <div id="list_table_div">
 
-	<table id="product-list">
+	<table id="io_list">
 		<tr>
 			<th>No</th>
 			<th>일자</th>
@@ -157,7 +150,7 @@ html, body {
 </div>
 
 
-<div id="new-write">
+<div id="new_write">
 	<a href="${rootPath}/write">새로 작성</a>
 </div>
 
@@ -183,7 +176,7 @@ html, body {
 		io_list.forEach(function(obj) {
 			obj.addEventListener("click", function() {
 				let id = obj.getAttribute("data-id");
-				document.location.href = `${rootPath}/detail/?id=${id}`;
+				document.location.href = `${rootPath}/detail/?id=` + id;
 			});
 		});
 	});

@@ -85,7 +85,8 @@ html, body {
 	border-radius: 5px;
 }
 
-#iteminput button#btn-save {
+#iteminput button#btn_save {
+	cursor: pointer;
 	background-color: black;
 	color: white;
 	padding: 0.5rem 25px;
@@ -93,13 +94,14 @@ html, body {
 	transition: all 0.3s;
 }
 
-#btn-save:hover {
+#btn_save:hover {
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 	background-color: cornflowerblue;
 	font-weight: bold;
 }
 
-#btn-list {
+#btn_list {
+	cursor: pointer;
 	background-color: gray;
 	color: wheat;
 	padding: 0.5rem 25px;
@@ -107,12 +109,11 @@ html, body {
 	transition: all 0.3s;
 }
 
-#btn-list:hover {
+#btn_list:hover {
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 	background-color: coral;
 	font-weight: bold;
 }
-
 </style>
 
 <form:form id="iteminput" modelAttribute="IOVO">
@@ -158,17 +159,14 @@ html, body {
 		</div>
 
 		<div class="btn-box">
-			<button id="btn-list">리스트로</button>
-			<button id="btn-save">저장</button>
+			<button id="btn_list" type="button" onclick="tolist()">리스트로</button>
+			<button id="btn_save">저장</button>
 		</div>
 	</fieldset>
 </form:form>
 
 <script>
-	document.addEventListener("DOMContentLoaded", function() {
-		document.querySelector("#btn-save").addEventListener("click",
-				function() {
-					document.location.href("/iolist/write");
-				});
-	});
+	function tolist() {
+		document.location.href = "${rootPath}"
+	}
 </script>
