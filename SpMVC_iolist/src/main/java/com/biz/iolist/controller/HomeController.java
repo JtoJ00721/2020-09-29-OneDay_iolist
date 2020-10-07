@@ -20,16 +20,14 @@ import com.biz.iolist.service.IoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Controller
 @RequiredArgsConstructor
 public class HomeController {
 
-<<<<<<< HEAD
 	@Autowired
 	private IoDao ioDao;
 
-=======
->>>>>>> 5be0764b9239b9bf86d48a22020b88bc0ae22d58
 	@Qualifier("pService")
 	private final IoService ioService;
 
@@ -62,6 +60,7 @@ public class HomeController {
 	public String detail(@RequestParam("id") Long seq, Model model) {
 
 		IoVO ioVO = ioService.findById(seq);
+		log.debug(ioVO.toString());
 		model.addAttribute("IOVO", ioVO);
 		model.addAttribute("BODY", "IO_DETAIL");
 

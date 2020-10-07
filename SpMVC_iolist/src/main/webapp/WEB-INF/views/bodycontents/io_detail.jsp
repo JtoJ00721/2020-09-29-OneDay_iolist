@@ -28,11 +28,7 @@ article {
 }
 
 #detail_interface {
-<<<<<<< HEAD
 	border: 2px solid darkolivegreen;
-=======
-	border: 5px solid gray;
->>>>>>> 5be0764b9239b9bf86d48a22020b88bc0ae22d58
 	border-radius: 8px;
 	padding: 15px;
 }
@@ -73,7 +69,6 @@ hr {
 	padding: 8px 16px;
 	margin: 8px 4px;
 	text-decoration: none;
-<<<<<<< HEAD
 	background-color:  navy;
 	border: 3px solid black;
 	border-radius: 5px;
@@ -94,29 +89,6 @@ hr {
 	border: 3px dotted coral;
 	font-weight: bold;
 	color: black;
-=======
-	background-color: darkblue;
-	border: 3px solid transparent;
-	border-radius: 5px;
-	color: white;
-	transition: all 1s;
-	border-radius: 5px;
-}
-
-#detail-menu a:nth-child(1) {
-	background-color: brown;
-}
-
-#detail-menu a:nth-child(3) {
-	background-color: orange;
-}
-
-#detail-menu a:hover {
-	background-color: #ddd;
-	color: black;
-	font-weight: bold;
-	border: 3px dashed gray;
->>>>>>> 5be0764b9239b9bf86d48a22020b88bc0ae22d58
 }
 </style>
 
@@ -172,26 +144,15 @@ hr {
 <section id="detail-menu">
 	<a href="${rootPath}/">리스트로</a> <a
 		href="${rootPath}/update?id=${IOVO.seq}">수정</a> <a
-<<<<<<< HEAD
 		href="javascript:void(0)" id="list-delete" data-id="${IOVO.seq}">삭제</a>
-=======
-		href="javascript:void(0)" id="pro-delete" data-id="${IOVO.seq}">삭제</a>
->>>>>>> 5be0764b9239b9bf86d48a22020b88bc0ae22d58
 </section>
 
 <script>
 	document.addEventListener("DOMContentLoaded", function() {
-<<<<<<< HEAD
 		document.querySelector("#list-delete").addEventListener(
 				"click",
 				function() {
 					let id = document.querySelector("#list-delete")
-=======
-		document.querySelector("#pro-delete").addEventListener(
-				"click",
-				function() {
-					let id = document.querySelector("#pro-delete")
->>>>>>> 5be0764b9239b9bf86d48a22020b88bc0ae22d58
 							.getAttribute("data-id");
 					if (confirm("정말 삭제? ><")) {
 						document.location

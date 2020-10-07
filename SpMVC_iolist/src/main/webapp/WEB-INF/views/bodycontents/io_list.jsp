@@ -15,24 +15,11 @@ html, body {
 	width: 100%;
 }
 
-#holder {
-	text-align: center;
-}
-
 #list_table_div {
-<<<<<<< HEAD
 	text-align: center;
 	align-items: center;
 	justify-content: center;
 	width: 70%;
-=======
-	display:inline-block;
-	text-align: center;
-	align-items: center;
-	justify-content: center;
-	width: 70%; 
-	height: auto;
->>>>>>> 5be0764b9239b9bf86d48a22020b88bc0ae22d58
 	margin: 30px;
 	padding: 20px;
 }
@@ -41,11 +28,7 @@ html, body {
 	border-collapse: collapse;
 	text-align: center;
 	width: 100%;
-<<<<<<< HEAD
 	border: 2px dashed olive;
-=======
-	border: 3px dashed olive;
->>>>>>> 5be0764b9239b9bf86d48a22020b88bc0ae22d58
 }
 
 #io_list th, #io_list td {
@@ -64,15 +47,7 @@ html, body {
 	transition: all 0.5s;
 }
 
-<<<<<<< HEAD
 #io_list tr:nth-child(n+2):nth-last-child(n+2) {
-=======
-#product-list tr:first-child {
-	border-bottom: 2px dotted olive;
-}
-
-#product-list tr:nth-child(n+2):nth-last-child(n+2) {
->>>>>>> 5be0764b9239b9bf86d48a22020b88bc0ae22d58
 	cursor: pointer;
 }
 
@@ -84,12 +59,7 @@ html, body {
 	background-color: white;
 }
 
-<<<<<<< HEAD
 #io_list tr:nth-last-child(1) {
-=======
-#product-list tr:nth-last-child(1) {
-	border-top: 2px dotted olive;
->>>>>>> 5be0764b9239b9bf86d48a22020b88bc0ae22d58
 	background-color: coral;
 	color: wheat;
 	font-weight: bold;
@@ -125,7 +95,6 @@ html, body {
 }
 </style>
 
-<section id="holder">
 <div id="list_table_div">
 
 	<table id="io_list">
@@ -144,7 +113,7 @@ html, body {
 			<c:choose>
 				<c:when test="${items.io_input=='1'}">
 					<tr class=io_item data-id="${items.seq}">
-						<td>${items.seq}</td>
+						<td>${i.count}</td>
 						<td>${items.io_date}</td>
 						<td>${items.io_time}</td>
 						<td>${items.io_pname}</td>
@@ -157,7 +126,7 @@ html, body {
 				</c:when>
 				<c:otherwise>
 					<tr class=io_item data-id="${items.seq}">
-						<td>${items.seq}</td>
+						<td>${i.count}</td>
 						<td>${items.io_date}</td>
 						<td>${items.io_time}</td>
 						<td>${items.io_pname}</td>
@@ -179,7 +148,7 @@ html, body {
 	</table>
 
 </div>
-</section>
+
 
 <div id="new_write">
 	<a href="${rootPath}/write">새로 작성</a>
@@ -204,7 +173,6 @@ html, body {
 		document.querySelector("#o_total").innerHTML = o_total;
 
 		let io_list = document.querySelectorAll(".io_item");
-
 		io_list.forEach(function(obj) {
 			obj.addEventListener("click", function() {
 				let id = obj.getAttribute("data-id");

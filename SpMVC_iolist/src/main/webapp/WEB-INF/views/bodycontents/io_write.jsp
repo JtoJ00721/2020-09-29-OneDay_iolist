@@ -159,28 +159,14 @@ html, body {
 		</div>
 
 		<div class="btn-box">
-<<<<<<< HEAD
 			<button id="btn_list" type="button" onclick="tolist()">리스트로</button>
 			<button id="btn_save">저장</button>
-=======
-			<a href="${rootPath}/"><button id="btn-list" type="button">리스트로</button></a>
-			<button id="btn-save">저장</button>
->>>>>>> 5be0764b9239b9bf86d48a22020b88bc0ae22d58
 		</div>
 	</fieldset>
 </form:form>
 
 <script>
-<<<<<<< HEAD
 	function tolist() {
 		document.location.href = "${rootPath}"
 	}
-=======
-	document.addEventListener("DOMContentLoaded", function() {
-		document.querySelector("#btn-save").addEventListener("click",
-				function({
-					document.location.href("/iolist/write");
-				}); 					
-	});
->>>>>>> 5be0764b9239b9bf86d48a22020b88bc0ae22d58
 </script>
