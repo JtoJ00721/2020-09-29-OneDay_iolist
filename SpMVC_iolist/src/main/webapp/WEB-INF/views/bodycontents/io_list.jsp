@@ -16,19 +16,19 @@ html, body {
 }
 
 #list_table_div {
+	display: inline-block;
 	text-align: center;
 	align-items: center;
 	justify-content: center;
 	width: 70%;
-	margin: 30px;
-	padding: 20px;
+	margin: 50px 0px;
 }
 
 #io_list {
 	border-collapse: collapse;
 	text-align: center;
 	width: 100%;
-	border: 2px dashed olive;
+	border: 3px dashed olive;
 }
 
 #io_list th, #io_list td {
@@ -70,8 +70,8 @@ html, body {
 }
 
 #new_write {
-	width: 90%;
-	padding: 10px;
+	display:inline-block;
+	width: 70%;
 	text-align: right;
 }
 

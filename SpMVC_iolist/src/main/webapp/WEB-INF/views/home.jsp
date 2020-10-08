@@ -52,6 +52,7 @@ header h2 {
 	height: 100%;
 	text-align: center;
 	align-items: center;
+	justify-content: center;
 }
 </style>
 

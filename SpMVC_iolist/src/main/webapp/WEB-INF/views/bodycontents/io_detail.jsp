@@ -37,7 +37,7 @@ article {
 	display: inline-block;
 	padding: 8px;
 	margin: 8px 4px;
-	border-bottom: 2px solid #ccc;
+	border-bottom: 2px solid gray;
 }
 
 #detail_interface h3 {
