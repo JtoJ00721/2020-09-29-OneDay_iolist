@@ -21,12 +21,14 @@ html, body {
 }
 
 header {
+	height: 20%;
 	background-color: cornflowerblue;
 	background-size: 100%;
 	color: white;
 	text-align: center;
 	padding: 2rem;
 	position: fixd;
+	background-color: cornflowerblue;
 }
 
 #header_easter {
@@ -49,10 +51,14 @@ header h2 {
 
 #main_contents {
 	display: block;
-	height: 100%;
+	height: 62%;
 	text-align: center;
 	align-items: center;
 	justify-content: center;
+}
+
+footer {
+	height: 18%;
 }
 </style>
 

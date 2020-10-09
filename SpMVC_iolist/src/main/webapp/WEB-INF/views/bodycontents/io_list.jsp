@@ -70,7 +70,7 @@ html, body {
 }
 
 #new_write {
-	display:inline-block;
+	display: inline-block;
 	width: 70%;
 	text-align: right;
 }
@@ -120,7 +120,7 @@ html, body {
 						<td>${items.io_price}</td>
 						<td></td>
 						<td>${items.io_quan}</td>
-						<td class="i_price">${items.io_total}</td>
+						<td class="in_price">${items.io_total}</td>
 						<td></td>
 					</tr>
 				</c:when>
@@ -134,7 +134,7 @@ html, body {
 						<td>${items.io_price}</td>
 						<td>${items.io_quan}</td>
 						<td></td>
-						<td class="o_price">${items.io_total}</td>
+						<td class="out_price">${items.io_total}</td>
 					</tr>
 				</c:otherwise>
 			</c:choose>
@@ -142,8 +142,8 @@ html, body {
 
 		<tr>
 			<td colspan="7">합계</td>
-			<td id="i_total"></td>
-			<td id="o_total"></td>
+			<td id="in_total"></td>
+			<td id="out_total"></td>
 		</tr>
 	</table>
 
@@ -156,26 +156,26 @@ html, body {
 
 <script>
 	document.addEventListener("DOMContentLoaded", function() {
-		let i_list = document.querySelectorAll(".i_price");
-		let o_list = document.querySelectorAll(".o_price");
-		let i_total = 0;
-		let o_total = 0;
+		let io_in = document.querySelectorAll(".in_price");
+		let io_out = document.querySelectorAll(".out_price");
+		let in_total = 0;
+		let out_total = 0;
 
-		i_list.forEach(function(obj) {
-			i_total += Number(obj.innerHTML);
+		io_in.forEach(function(item_data) {
+			in_total += Number(item_data.innerHTML);
 		});
 
-		o_list.forEach(function(obj) {
-			o_total += Number(obj.innerHTML);
+		io_out.forEach(function(item_data) {
+			out_total += Number(item_data.innerHTML);
 		});
 
-		document.querySelector("#i_total").innerHTML = i_total;
-		document.querySelector("#o_total").innerHTML = o_total;
+		document.querySelector("#in_total").innerHTML = in_total;
+		document.querySelector("#out_total").innerHTML = out_total;
 
 		let io_list = document.querySelectorAll(".io_item");
-		io_list.forEach(function(obj) {
-			obj.addEventListener("click", function() {
-				let id = obj.getAttribute("data-id");
+		io_list.forEach(function(item_data) {
+			item_data.addEventListener("click", function() {
+				let id = item_data.getAttribute("data-id");
 				document.location.href = `${rootPath}/detail/?id=` + id;
 			});
 		});

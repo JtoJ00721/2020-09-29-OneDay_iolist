@@ -6,7 +6,6 @@
 
 <style>
 footer {
-	height: 18%;
 	text-align: center;
 	background-color: black;
 }

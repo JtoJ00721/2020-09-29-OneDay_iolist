@@ -19,6 +19,7 @@ html, body {
 header {
 	background-color: cornflowerblue;
 	background-size: 100%;
+	border-bottom: 15px double black;
 	color: white;
 	text-align: center;
 	padding: 2rem;

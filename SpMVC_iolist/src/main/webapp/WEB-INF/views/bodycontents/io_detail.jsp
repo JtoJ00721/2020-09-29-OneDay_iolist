@@ -22,14 +22,11 @@ html, body {
 	justify-content: center;
 }
 
-article {
-	width: 40%;
-	margin: 10px;
-}
-
 #detail_interface {
-	border: 2px solid darkolivegreen;
-	border-radius: 8px;
+	margin: 10px;
+	width: 50%;
+	height: 50%;
+	border: 30px double gray;
 	padding: 15px;
 }
 
@@ -59,9 +56,8 @@ hr {
 }
 
 #detail-menu {
-	width: 90%;
-	margin: 10px;
-	text-align: right;
+	width: 100%;
+	text-align: center;
 }
 
 #detail-menu a {
@@ -156,7 +152,7 @@ hr {
 							.getAttribute("data-id");
 					if (confirm("정말 삭제? ><")) {
 						document.location
-								.replace(`${rootPath}/delete?id=` + id);
+								.replace(`${rootPath}/delete/?id=` + id);
 					}
 				});
 	});
